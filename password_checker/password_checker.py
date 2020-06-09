@@ -28,10 +28,10 @@ def pwned_api_check(password):
 def ask_password():
     # se puede chequear mas de una por ejecucion
     password_list = []
-    print("Password checker. Type the password/s you want to check.\nEXIT to finish\n")
+    print("Password checker. Type the password/s you want to check.\nType nothing to finish\n")
     while True:
         user_password = input("Password: ")
-        if user_password != 'EXIT' and user_password != 'exit' and user_password != "Exit":
+        if user_password.upper() != '':
             password_list.append(user_password)
         else:
             break
@@ -49,5 +49,5 @@ def check_user_password():
     print('Done. See you soon!\n')
 
 
-if __name__ == 'main':
+if __name__ == '__main__':
     check_user_password()
