@@ -31,7 +31,7 @@ def ask_password():
     print("Password checker. Type the password/s you want to check.\nType nothing to finish\n")
     while True:
         user_password = input("Password: ")
-        if user_password.upper() != '':
+        if user_password != '':
             password_list.append(user_password)
         else:
             break
