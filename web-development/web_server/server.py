@@ -5,30 +5,16 @@ app = Flask(__name__)
 #def hello_world(username=None, post_id=None):
 #   return render_template('index.html', name=username, post_id=post_id)
 
-@app.route('/<index>')
-def main(index=None):
-   return render_template('index.html')
-
 #@app.route('/<username>')
 #def hello_world(username=None):
 #   return render_template('index.html', name=username)
 
-@app.route('/about')
-def about():
-   return render_template('about.html')
+# probando la reutilizacion de acuerdo al valor ingresado
+@app.route('/')
+def main():
+   return render_template('index.html')
 
-@app.route('/contact')
-def contact():
-   return render_template('contact.html')
 
-@app.route('/work')
-def work():
-   return render_template('work.html')
-
-@app.route('/works')
-def works():
-   return render_template('works.html')
-
-@app.route('/components')
-def components():
-   return render_template('components.html')
+@app.route('/<section>')
+def page_html(section):
+   return render_template(section)
