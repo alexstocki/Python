@@ -1,19 +1,34 @@
 from flask import Flask, render_template, url_for
 app = Flask(__name__)
 
-@app.route('/<username>/<int:post_id>')
-def hello_world(username=None, post_id=None):
-   return render_template('index.html', name=username, post_id=post_id)
+#@app.route('/<username>/<int:post_id>')
+#def hello_world(username=None, post_id=None):
+#   return render_template('index.html', name=username, post_id=post_id)
 
+@app.route('/<index>')
+def main(index=None):
+   return render_template('index.html')
 
 #@app.route('/<username>')
 #def hello_world(username=None):
 #   return render_template('index.html', name=username)
 
-@app.route('/about.html')
+@app.route('/about')
 def about():
    return render_template('about.html')
 
-@app.route('/blog')
-def blog():
-   return 'Seccion dedicada a los desafios llevados a cabo durante el aprendizaje de Python.'
+@app.route('/contact')
+def contact():
+   return render_template('contact.html')
+
+@app.route('/work')
+def work():
+   return render_template('work.html')
+
+@app.route('/works')
+def works():
+   return render_template('works.html')
+
+@app.route('/components')
+def components():
+   return render_template('components.html')
