@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, request, redirect
 app = Flask(__name__)
 
 #@app.route('/<username>/<int:post_id>')
@@ -14,6 +14,15 @@ app = Flask(__name__)
 def main():
    return render_template('index.html')
 
+@app.route('/submit_form', methods=['GET', 'POST'])
+def submit_form():
+   if request.method == 'POST':
+      data = request.form.to_dict()
+      with open('database.txt', 'a+') as database:
+         database.write(f'From: {data["email"]}; Subject: {data["subject"]}; Message: {data["message"]}\n')
+      return redirect('/contact_done.html')
+   else:
+      return 'Algo salio mal, pa. Proba de nuevo.'
 
 @app.route('/<section>')
 def page_html(section):
