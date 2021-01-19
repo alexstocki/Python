@@ -26,7 +26,7 @@ def pwned_api_check(password):
 
 
 def ask_password():
-    # se puede chequear mas de una por ejecucion
+    # you can check multiple passwords in a single execution
     password_list = []
     print("Password checker. Type the password/s you want to check.\nType nothing to finish\n")
     while True:
