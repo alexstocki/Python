@@ -10,7 +10,7 @@ class Cedear:
 
 def get_info():
     cedear_list = []
-    with open('/Users/alexstocki/Desktop/data/info.csv', 'r') as file:
+    with open('file_info_csv', 'r') as file:
         for line in file:
             line = clean_data(line)
             data = line.split(',')
